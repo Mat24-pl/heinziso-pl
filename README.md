@@ -2,7 +2,7 @@
 HeinzISO** to strona internetowa dedykowana miłośnikom systemów operacyjnych Microsoftu. Strona zawiera szczegółowe informacje o różnych wersjach systemów Windows, w tym wersjach beta, serwerowych oraz historycznych. Oferuje również możliwość pobrania plików ISO oraz instrukcje instalacji na fizycznym komputerze i maszynie wirtualnej.
 
 ## Link do strony:
-[Przejdź do HeinzISO](https://mat24-pl.github.io/heinziso-pl)
+[Przejdź do HeinzISO](https://mat24-pl.github.io/heinziso-pl/)
 
 ## Spis treści:
 - [Strona główna](index.html) - Lista dostępnych systemów Windows.
