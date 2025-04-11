@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeinzISO - Windows Millenium Edition (ME)</title>
+  <link rel="shortcut icon" href="contents/winme.png" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #58a6ff;
+    }
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #3b82f6;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul.description, ol.description {
+      margin-top: 15px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    ul.description li, ol.description li {
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #60a5fa;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #3b82f6;
+      font-size: 0.9rem;
+      border: 1px solid #3b82f6;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix -->
+<div id="matrix"></div>
+
+<!-- Główna zawartość -->
+<div class="container">
+  <img src="contents/winme.png" alt="Logo Windows ME" class="logo" />
+  <h1>Windows Millennium Edition (ME)</h1>
+  <img src="contents/WinMEScreen.jpg" alt="Zrzut ekranu Windows ME" class="screenshot" />
+  
+  <div class="description">
+    <strong>Wersja:</strong> Windows ME<br>
+    <strong>Data premiery:</strong> 34 Września 2000<br>
+    <strong>Architektura:</strong> 32-bit<br><br>
+
+    Windows Millennium Edition (ME) był ostatnim systemem opartym na jądrze DOS-a, skierowanym do użytkowników domowych. Miał wprowadzić nowoczesne funkcje, ale zyskał opinię jednego z najmniej stabilnych systemów w historii. Niebieski ekran śmierci był tu gościem honorowym!
+  </div>
+
+<img src="contents/WinMEScreen2.jpg" alt="Zrzut ekranu Windows ME" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: Pentium 150 MHz lub lepszy</li>
+    <li>Pamięć RAM: 32 MB (zalecane 64 MB)</li>
+    <li>Dysk twardy: min. 320 MB wolnego miejsca</li>
+    <li>Karta graficzna: SVGA 800x600</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz obraz ISO poniżej.</li>
+    <li>Stwórz bootowalną płytę CD lub użyj emulatora (np. VirtualBox).</li>
+    <li>Uruchom instalator z BIOS-u lub środowiska DOS.</li>
+    <li>Postępuj zgodnie z kreatorem i... przygotuj się na niespodzianki 😉</li>
+  </ol>
+
+  <h2>📦 Plik ISO</h2>
+  <a href="https://archive.org/download/WinMEPolish/Windows%20Millenium%20Edition%20PL.iso" class="download-btn" download>Pobierz ISO</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz">
+  <div class="speech">Ten system psuje się szybciej niż moje wynalazki!</div>
+</div>
+
+<!-- Matrix Script -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#3b82f6";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "Ten system psuje się szybciej niż moje wynalazki!",
+    "Windows ME... czyli Millennium Error.",
+    "BSoD był tu chyba funkcją, nie błędem!",
+    "Zainstalowałem ME, a potem odinstalowałem życie.",
+    "Mówią, że ME to skrót od 'Mega Epicfail'.",
+    "Agent P, odinstaluj mi ten system!",
+    "Czuję się jak w 2000 roku. Tylko gorzej.",
+    "Działa? Nie działa. ME klasyka."
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>

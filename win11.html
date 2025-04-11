@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeinzISO - Windows 11</title>
+  <link rel="shortcut icon" href="contents/win11.png">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+	
+	h2 {
+	  margin-top: 40px;
+	  color: #58a6ff;
+	}
+
+	ul.description, ol.description {
+	  margin-top: 15px;
+	  margin-left: 20px;
+	  padding-left: 20px;
+	}
+
+	ul.description li, ol.description li {
+	  margin-bottom: 10px;
+	}
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0f0;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #238636;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #2ea043;
+    }
+
+    /* Matrix background */
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    /* Heinz w rogu */
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #0f0;
+      font-size: 0.9rem;
+      border: 1px solid #0f0;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix tło -->
+<div id="matrix"></div>
+
+<div class="container">
+  <img src="contents/win11.png" alt="Logo Windows 11" class="logo" />
+  <h1>Windows 11</h1>
+  <img src="contents/Win11Screen.jpg" alt="Zrzut ekranu Windows 11" class="screenshot" />
+  
+  <div class="description">
+    <strong>Wersja:</strong> 23H2<br>
+    <strong>Data wydania:</strong> 5 Października 2021<br>
+    <strong>Architektura:</strong> 64-bit (x64)<br><br>
+
+    Windows 11 to najnowszy system operacyjny firmy Microsoft. Łączy nowoczesny wygląd z funkcjami poprawiającymi produktywność, bezpieczeństwo i integrację z nowym sprzętem.
+  </div>
+
+	<img src="contents/Win11Screen2.jpg" alt="Zrzut ekranu Windows 11" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: 1 GHz lub szybszy, co najmniej 2 rdzenie, zgodny z 64-bit i obsługą Secure Boot oraz TPM 2.0</li>
+    <li>Pamięć RAM: minimum 4 GB</li>
+    <li>Dysk: minimum 64 GB wolnego miejsca</li>
+    <li>Karta graficzna: zgodna z DirectX 12 / WDDM 2.0</li>
+    <li>Wyświetlacz: co najmniej 9", rozdzielczość HD (720p)</li>
+    <li>TPM: Wersja 2.0 (moduł Trusted Platform Module)</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz plik ISO klikając przycisk poniżej.</li>
+    <li>Przygotuj pendrive (minimum 8 GB) i program Rufus lub Media Creation Tool.</li>
+    <li>Utwórz bootowalny pendrive z pliku ISO.</li>
+    <li>Włóż pendrive do komputera i uruchom go ponownie.</li>
+    <li>Wejdź do BIOS/UEFI (np. klawisz F2 lub DEL) i ustaw bootowanie z USB.</li>
+    <li>Zapisz zmiany i uruchom ponownie komputer.</li>
+    <li>Postępuj zgodnie z instrukcjami instalatora systemu Windows 11.</li>
+  </ol>
+
+  <h2>📦 Plik ISO</h2>
+  <a href="https://www.microsoft.com/pl-pl/software-download/windows11?msockid=197e8c55bba26be905ff992bba836a95" class="download-btn">Pobierz ISO</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz">
+  <div class="speech">Windows 11? Nowoczesny, ale XP to był klimat!</div>
+</div>
+
+<!-- Matrix Script -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#0f0";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Heinz losowe teksty -->
+<script>
+  const heinzTeksty = [
+    "Windows 11? Nowoczesny, ale XP to był klimat!",
+    "Nie zapomnij o TPM 2.0 – bez tego ani rusz.",
+    "Nowy wygląd? Ja wolę klasyczne kafelki!",
+    "Windows 11 lubi SSD – na HDD będzie ziewał.",
+    "Ustawienia? Tylko jeśli znajdziesz je w nowym menu.",
+    "Pamiętaj, że ISO od Heinza to zawsze legalne ISO."
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>

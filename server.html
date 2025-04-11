@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Server – Centrum pobierania</title>
+  <link rel="shortcut icon" href="contents/winServer.png" />
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      color: #10b981;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .server-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .server-item {
+      background: #161b22;
+      border: 1px solid #10b981;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .server-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #10b981;
+    }
+
+    .server-item h2 {
+      color: #10b981;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .server-item p {
+      font-size: 0.95rem;
+    }
+
+    a.download-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background: #10b981;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    a.download-btn:hover {
+      background: #34d399;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #1f2937;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #10b981;
+      font-size: 0.9rem;
+      border: 1px solid #10b981;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1><code>Windows Server</h1></code>
+  <p>W tej sekcji znajdziesz wszystkie wersje systemu Windows Server – od klasycznego NT 4.0 aż po nowoczesny Server 2022. Każdy system zawiera ISO gotowe do pobrania oraz szczegółowe informacje.</p>
+
+  <div class="server-list">
+    <div class="server-item">
+      <h2>Windows Server 2022</h2>
+      <p>Najnowszy system serwerowy Microsoftu – stabilność, bezpieczeństwo, kontenery, i wiele więcej.</p>
+      <a href="https://archive.org/download/20348.169.210806-1117.-fe-release-svc-prod-1-server-x-64-fre-pl-pl/20348.169.210806-1117.FE_RELEASE_SVC_PROD1_SERVER_X64FRE_PL-PL.ISO" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows Server 2019</h2>
+      <p>Wersja z naciskiem na chmurę hybrydową, integrację z Azure oraz konteneryzację.</p>
+      <a href="https://nc01.winiso.pl/s/NaBrRgwRJpFjmzE/download/pl_windows_server_2019_essentials_updated_march_2019_x64_dvd_9841d075.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows Server 2016</h2>
+      <p>Znany z PowerShell 5.1, Nano Server i lepszej obsługi środowisk Hyper-V.</p>
+      <a href="https://nc01.winiso.pl/s/qDFPiqeYeZmSz33/download/pl_windows_server_2016_x64_dvd_9720938.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows Server 2012 / R2</h2>
+      <p>Nowoczesny interfejs, wsparcie dla IPv6, Storage Spaces i wszechstronne zarządzanie serwerami.</p>
+      <a href="https://archive.org/download/WindowsServer2012R2x64Polish/pl_windows_server_2012_r2_with_update_x64_dvd_6052749.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows Server 2008 / R2</h2>
+      <p>System oparty na jądrze Windows NT 6.1, z DirectAccess, BranchCache i Hyper-V 2.0.</p>
+      <a href="https://archive.org/download/WinServer2008SP2PLx86x64/pl_windows_server_2008_with_sp2_x86_dvd_x15-41077.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows Server 2003 / R2</h2>
+      <p>Solidna platforma dla aplikacji serwerowych, wsparcie dla .NET 2.0 i Active Directory.</p>
+      <a href="https://archive.org/download/WinServer2003EnterpriseSP2PL/Windows%20Server%202003%20Enterprise%20SP2%20Corporate%20Edition%20PL.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+    <div class="server-item">
+      <h2>Windows 2000 Server</h2>
+      <p>Pierwszy poważny serwer oparty na Active Directory. Legenda lat 2000.</p>
+      <a href="https://nc01.winiso.pl/s/spLPaFnjmbNSrin/download/Windows-2000-Server-PL-Standard-Edition.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+  </div>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz Dundersztyc">
+  <div class="speech">Jeśli to padnie, to cały serwerownia leży! 😱</div>
+</div>
+
+<!-- Losowe teksty Heinza -->
+<script>
+  const heinzServerQuotes = [
+    "Jeśli to padnie, to cała serwerownia leży! 😱",
+    "Pamiętaj, backup to nie luksus, to konieczność.",
+    "Czy to już uptime 365 dni? Czas na restart!",
+    "Hyper-V? Hyper-Meeega problem jak nie działa.",
+    "Nie aktualizuj serwera w piątek po 16. Nigdy."
+  ];
+
+  let lastIndex = -1;
+  const speech = document.querySelector(".speech");
+
+  setInterval(() => {
+    let index;
+    do {
+      index = Math.floor(Math.random() * heinzServerQuotes.length);
+    } while (index === lastIndex);
+    lastIndex = index;
+    speech.textContent = heinzServerQuotes[index];
+  }, 10000);
+</script>
+
+</body>
+</html>

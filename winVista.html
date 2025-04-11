@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeinzISO - Windows Vista</title>
+  <link rel="icon" href="contents/winvista.png">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #58a6ff;
+    }
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #f00;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul.description, ol.description {
+      margin-top: 15px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    ul.description li, ol.description li {
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #da3633;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #f85149;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #f66;
+      font-size: 0.9rem;
+      border: 1px solid #f66;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix -->
+<div id="matrix"></div>
+
+<!-- Główna zawartość -->
+<div class="container">
+  <img src="contents/winvista.png" alt="Logo Windows Vista" class="logo" />
+  <h1>Windows Vista</h1>
+  <img src="contents/winVistaScreen.jpg" alt="Zrzut ekranu Windows Vista" class="screenshot" />
+  
+  <div class="description">
+    <strong>Wersja:</strong> Windows Vista SP2 (ostatnia stabilna)<br>
+    <strong>Data premiery:</strong> 30 Stycznia 2007<br>
+    <strong>Architektura:</strong> 64-bit / 32-bit<br><br>
+
+    Windows Vista – system, który miał być rewolucją… i był – ale głównie w wymaganiach sprzętowych 😅. Chociaż wyglądał pięknie dzięki Aero, jego wydajność i agresywna kontrola UAC przeszły do legendy. Ale hej – każda trauma czegoś nas uczy.
+  </div>
+
+  <img src="contents/winVistaScreen2.jpg" alt="Zrzut ekranu Windows Vista" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: 1 GHz</li>
+    <li>Pamięć RAM: 1 GB</li>
+    <li>Dysk twardy: 15 GB wolnego miejsca</li>
+    <li>Karta graficzna: zgodna z DirectX 9 z WDDM i 128 MB RAM (dla Aero)</li>
+    <li>Napęd DVD-ROM, ekran 800x600</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz obraz ISO klikając przycisk poniżej.</li>
+    <li>Nagraj ISO na płytę DVD lub użyj narzędzia typu Rufus dla USB.</li>
+    <li>Uruchom komputer z nośnika.</li>
+    <li>Przejdź przez kreator instalacji – przygotuj się na dłuższą chwilę.</li>
+    <li>Zainstaluj aktualizacje… i weź urlop.</li>
+  </ol>
+
+  <h2>📦 Plik ISO</h2>
+  <a href="https://archive.org/download/WinVistaSP2AIOPLMay2017/Windows_Vista_SP2_Final_Maj_2017_64-bit_PL.iso" class="download-btn" download>Pobierz ISO</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz">
+  <div class="speech">Vista... pamiętam ten ból 😬</div>
+</div>
+
+<!-- Matrix Script -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#f66";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Losowe teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "Vista... pamiętam ten ból 😬",
+    "Kliknąłem coś i system poprosił o pozwolenie... 6 razy.",
+    "Aero było piękne, ale RAM płakał.",
+    "Najlepszy sposób na grzanie laptopa w zimie.",
+    "Vista to nie system – to styl życia. W stylu lagów.",
+    "Przy każdym kliknięciu czułem, jak system się zastanawia.",
+    "Kto projektował UAC? Terminator?",
+    "XP chodził lepiej na tym samym sprzęcie. Żal."
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>

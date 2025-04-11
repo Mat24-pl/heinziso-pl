@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HeinzISO - Windows NT 4.0</title>
+  <link rel="shortcut icon" href="contents/Winnt4.png" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 220px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #58a6ff;
+    }
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #3b82f6;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul.description, ol.description {
+      margin-top: 15px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    ul.description li, ol.description li {
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #60a5fa;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #3b82f6;
+      font-size: 0.9rem;
+      border: 1px solid #3b82f6;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix -->
+<div id="matrix"></div>
+
+<!-- Zawartość strony -->
+<div class="container">
+  <img src="contents/Winnt4.png" alt="Logo Windows NT 4.0" class="logo" />
+  <h1>Windows NT 4.0</h1>
+  <img src="contents/Winnt4Screen.jpg" alt="Zrzut ekranu Windows NT 4.0" class="screenshot" />
+
+  <div class="description">
+    <strong>Wersja:</strong> Windows NT 4.0 Workstation<br>
+    <strong>Data premiery:</strong> 29 lipca 1996<br>
+    <strong>Architektura:</strong> 32-bit<br><br>
+
+    Windows NT 4.0 to system, który połączył graficzny interfejs Windows 95 z potężnym jądrem NT. Był niezawodny, stabilny i... nie bardzo lubił gry. Idealny dla sieci, biura i wszędzie tam, gdzie "nie wolno było nacisnąć Alt+F4 bez zgody administratora". 😄
+  </div>
+
+<img src="contents/Winnt4Screen2.jpg" alt="Zrzut ekranu Windows NT 4.0" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: 486 lub lepszy</li>
+    <li>Pamięć RAM: minimum 16 MB</li>
+    <li>Dysk twardy: minimum 110 MB</li>
+    <li>Karta graficzna: VGA lub lepsza</li>
+    <li>Napęd CD-ROM lub stacja dyskietek</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz plik ISO klikając przycisk poniżej.</li>
+    <li>Utwórz bootowalny nośnik lub uruchom ISO w maszynie wirtualnej.</li>
+    <li>Przygotuj partycję i zainstaluj system z dyskietki setup/boot.</li>
+    <li>Po instalacji zainstaluj Service Packi i sterowniki!</li>
+  </ol>
+
+  <h2>📦 Plik ISO</h2>
+  <a href="https://archive.org/download/WinNT4.0Workstation_SP6aPOL/WinNT4.0_Workstation_SP1_OEM_Update_SP6a_Polish.iso" class="download-btn" download>Pobierz ISO</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz Dundersztyc">
+  <div class="speech">NT 4.0? Stabilniejszy niż moje wynalazki! A to już coś.</div>
+</div>
+
+<!-- Matrix Animation -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#3b82f6";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "NT 4.0? Stabilniejszy niż moje wynalazki! A to już coś.",
+    "Ten system to nie żarty – odpalałem na nim moje złośliwe plany w wersji beta.",
+    "Gdyby Windows 95 miał dziecko z serwerem... to właśnie byłby NT 4.0!",
+    "Ctrl+Alt+Delete był tu bardziej potrzebny niż w moim laboratorium.",
+    "Nie próbuj grać tu w gry – system się nie obrazi, ale ty możesz.",
+    "To właśnie tutaj pierwszy raz zainstalowałem sterownik... bez BSOD-u!",
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HeinzISO - Windows 2.0</title>
+  <link rel="shortcut icon" href="contents/win1.png" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #58a6ff;
+    }
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #3b82f6;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul.description, ol.description {
+      margin-top: 15px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    ul.description li, ol.description li {
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #3b82f6;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #60a5fa;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #3b82f6;
+      font-size: 0.9rem;
+      border: 1px solid #3b82f6;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix -->
+<div id="matrix"></div>
+
+<!-- Zawartość strony -->
+<div class="container">
+  <img src="contents/win1.png" alt="Logo Windows 2.0" class="logo" />
+  <h1>Windows 2.0</h1>
+  <img src="contents/Win2Screen.jpg" alt="Zrzut ekranu Windows 2.0" class="screenshot" />
+
+  <div class="description">
+    <strong>Wersja:</strong> Windows 2.0<br>
+    <strong>Data premiery:</strong> 9 grudnia 1987<br>
+    <strong>Architektura:</strong> 16-bit<br><br>
+
+    Windows 2.0 wprowadził możliwość nakładania okien na siebie oraz rozszerzone skróty klawiaturowe. Choć wygląda archaicznie, był kamieniem milowym dla późniejszych wersji – to w nim zadebiutowały programy takie jak Word i Excel dla Windows!
+  </div>
+
+	<img src="contents/Win20Screen.jpg" alt="Zrzut ekranu Windows 2.0" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: 8086/8088</li>
+    <li>Pamięć RAM: minimum 256 KB</li>
+    <li>Dyskietka: 5.25" (360 KB)</li>
+    <li>System operacyjny: MS-DOS 3.0 lub wyższy</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz obraz dyskietki w formacie IMA klikając poniżej.</li>
+    <li>Utwórz wirtualną maszynę z MS-DOS (np. PCem, 86Box lub DOSBox-X).</li>
+    <li>Załaduj plik IMA jako stację dyskietek i uruchom z niej maszynę.</li>
+    <li>Postępuj zgodnie z prostymi instrukcjami instalatora.</li>
+  </ol>
+
+  <h2>📦 Obraz dyskietki</h2>
+  <a href="https://archive.org/download/win-2.03/Win%202.03.IMA" class="download-btn" download>Pobierz plik IMA</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz Dundersztyc">
+  <div class="speech">Windows 2.0... To były czasy, kiedy system startował szybciej niż czajnik!</div>
+</div>
+
+<!-- Matrix Animation -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#3b82f6";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "Windows 2.0... To były czasy, kiedy system startował szybciej niż czajnik!",
+    "Kiedyś każdy bajt miał znaczenie – i to dosłownie.",
+    "Tego Windowsa instalowałem z prawdziwej dyskietki... z etykietą podpisaną długopisem!",
+    "Wersja 2.0 – już wtedy Excel zaczął robić furorę.",
+    "Skróty klawiszowe z Windowsa 2.0? Do dziś pamiętam kilka!"
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>

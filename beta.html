@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HeinzISO - Strefa BETA</title>
+  <link rel="shortcut icon" href="contents/winbeta.jpg" />
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #f97316;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #f97316;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .beta-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .beta-item {
+      background: #161b22;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #3b82f6;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .beta-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px #3b82f6;
+    }
+
+    .beta-item h2 {
+      color: #3b82f6;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .beta-item p {
+      font-size: 0.95rem;
+    }
+
+    .glitch {
+      animation: glitch 1.5s infinite;
+      color: #f97316;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9; }
+      20% { text-shadow: -2px 0 #ff00c1, 2px 2px #00fff9; }
+      40% { text-shadow: 2px -2px #ff00c1, -2px 2px #00fff9; }
+      60% { text-shadow: -1px 1px #ff00c1, 1px -1px #00fff9; }
+      80% { text-shadow: 2px 2px #ff00c1, -2px -2px #00fff9; }
+      100% { text-shadow: 0 0 #ff00c1, 0 0 #00fff9; }
+    }
+
+    a.download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #f97316;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    a.download-btn:hover {
+      background: #fb923c;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #f97316;
+      font-size: 0.9rem;
+      border: 1px solid #f97316;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 class="glitch"><code>Strefa BETA</code></h1>
+  <p>Witaj w tajemniczej krainie niedokończonych okien! Tutaj znajdziesz wersje systemów Windows, które ujrzały światło dzienne tylko w wersjach testowych – niektóre genialne, inne... cóż... 🤐</p>
+
+  <div class="beta-list">
+    <div class="beta-item">
+      <h2>Windows Neptune (2000)</h2>
+      <p>Projekt konsumenckiej wersji NT – nigdy nieukończony, ale dał początek Windows XP.</p>
+      <a href="https://archive.org/download/WinNeptune/Windows%20Neptune%20Build%205111.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+
+    <div class="beta-item">
+      <h2>Windows Chicago (1994)</h2>
+      <p>Wczesna wersja Windows 95 z futurystycznym menu Start i masą błędów.</p>
+      <a href="https://archive.org/download/microsoft-windows-95-chicago-4.00.166/Microsoft%20Windows%2095%20%28Chicago%204.00.166%29.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+
+    <div class="beta-item">
+      <h2>Windows Longhorn (2003-2004)</h2>
+      <p>Ambitny projekt z Aero Glass, Sidebarami i dużą niestabilnością. Miał być przyszłością, a został porzucony.</p>
+      <a href="https://archive.org/download/thelonghornarchive/Windows%20Longhorn%20build%204093%20%28main%29.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+
+    <div class="beta-item">
+      <h2>Windows Whistler (2001)</h2>
+      <p>Bezpośredni przodek XP, wiele buildów z eksperymentalnymi motywami.</p>
+      <a href="https://archive.org/download/windows-whistler-xp-build-list-professional/usa_2542__x86fre.pro_whistler.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+	
+	<div class="beta-item">
+      <h2>Windows NT 5.0 (1997)</h2>
+      <p>Nieudany następca Windows NT 4.0</p>
+      <a href="https://archive.org/download/usa_1585__x86fre.pro_nt5/usa_1585__x86fre.pro_nt5.iso" class="download-btn">Pobierz ISO</a>
+    </div>
+  </div>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz Dundersztyc">
+  <div class="speech">To jeszcze nie finalka, ale już można coś popsuć! 😎</div>
+</div>
+
+<!-- Losowe teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "To jeszcze nie finalka, ale już można coś popsuć!",
+    "Beta? Dla mnie każda wersja to finalna… aż coś wybuchnie.",
+    "Nie próbuj tego na komputerze babci.",
+    "Nie wszystkie okna są gotowe na światło dzienne.",
+    "Testowanie? Po co? Dajcie mi kompilować!"
+  ];
+
+  let index = -1;
+  const speech = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowy;
+    do {
+      nowy = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowy === index);
+    index = nowy;
+    speech.textContent = heinzTeksty[nowy];
+  }, 10000);
+</script>
+
+</body>
+</html>

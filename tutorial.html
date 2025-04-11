@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrukcja instalacji systemu</title>
+  <link rel="shortcut icon" href="contents/help.jpg" />
+  
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      color: #10b981;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #34d399;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .step {
+      background-color: #161b22;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      border-left: 5px solid #10b981;
+    }
+
+    .step h3 {
+      font-size: 1.4rem;
+      color: #10b981;
+    }
+
+    .step p {
+      font-size: 1.1rem;
+    }
+
+    a.back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #10b981;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      margin-top: 30px;
+      transition: background 0.3s ease;
+    }
+
+    a.back-btn:hover {
+      background: #34d399;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #1f2937;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #10b981;
+      font-size: 0.9rem;
+      border: 1px solid #10b981;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Instrukcja instalacji systemu</h1>
+  <p>Wybierz jedną z poniższych opcji, aby dowiedzieć się, jak zainstalować wybrany system Windows na fizycznym komputerze lub na maszynie wirtualnej (np. VirtualBox).</p>
+
+  <div class="step">
+    <h2><code>1. Instalacja na komputerze fizycznym</code></h2>
+    <h3>Krok 1: Przygotowanie nośnika instalacyjnego</h3>
+    <p>Najpierw musisz przygotować nośnik instalacyjny (płytę DVD lub pendrive) z systemem Windows. Jeśli masz plik ISO, możesz użyć narzędzi takich jak <strong>Rufus</strong> do utworzenia bootowalnego pendrive'a.</p>
+
+	<img src="contents/rufus.png">
+
+    <h3>Krok 2: Bootowanie z nośnika</h3>
+    <p>Po przygotowaniu nośnika, uruchom komputer i wejdź do BIOS-u (zwykle przez naciśnięcie klawisza F2 lub Delete). W ustawieniach BIOS-u zmień kolejność bootowania tak, aby komputer startował z napędu optycznego lub USB, w zależności od tego, z czego instalujesz.</p>
+
+	<img src="contents/bios.jpg">
+
+    <h3>Krok 3: Instalacja systemu</h3>
+    <p>Po uruchomieniu komputera z nośnika instalacyjnego, postępuj zgodnie z instrukcjami na ekranie. Wybierz preferowany język, formatowanie partycji (jeśli chcesz przeprowadzić świeżą instalację) i rozpocznij instalację.</p>
+  
+  <img src="contents/setup.jpg">
+  
+  </div>
+
+  <div class="step">
+    <h2><code>2. Instalacja na maszynie wirtualnej (VirtualBox)</code></h2>
+    <h3>Krok 1: Instalacja VirtualBox</h3>
+    <p>Pobierz i zainstaluj <strong>VirtualBox</strong> z oficjalnej strony: <a href="https://www.virtualbox.org" target="_blank" style="color: #34d399;">https://www.virtualbox.org</a>. To darmowe oprogramowanie pozwala na tworzenie wirtualnych maszyn na twoim komputerze.</p>
+
+	<img src="contents/vbox.png" width="100px"/>
+
+    <h3>Krok 2: Tworzenie nowej maszyny wirtualnej</h3>
+    <p>Po zainstalowaniu VirtualBox, uruchom go i kliknij przycisk "Nowa". Podaj nazwę systemu, wybierz odpowiednią wersję (np. Windows 10) i przydziel odpowiednią ilość pamięci RAM. Zdefiniuj również wirtualny dysk twardy (najlepiej VDI) i przydziel odpowiednią przestrzeń dyskową.</p>
+
+	<img src="contents/new.jpg" >
+
+    <h3>Krok 3: Montowanie nośnika ISO</h3>
+    <p>W ustawieniach nowej maszyny wirtualnej, przejdź do sekcji "Płyta optyczna" i wybierz plik ISO z systemem, który chcesz zainstalować. Następnie uruchom maszynę wirtualną.</p>
+
+	<img src="contents/disc.png" >
+
+    <h3>Krok 4: Instalacja systemu</h3>
+    <p>Po uruchomieniu maszyny wirtualnej, rozpocznij instalację systemu Windows tak, jak na fizycznym komputerze. Wybierz język, utwórz partycje i rozpocznij instalację. W przypadku VirtualBoxa, cały proces odbywa się w oknie wirtualnej maszyny.</p>
+  
+	<img src="contents/installer7.jpg" >
+  
+  </div>
+
+  <a href="index.html" class="back-btn">🔙 Wróć do strony głównej</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz Dundersztyc">
+  <div class="speech">Jeśli coś pójdzie nie tak, to zawsze winny jest VirtualBox! 😅</div>
+</div>
+
+<!-- Losowe teksty Heinza -->
+<script>
+  const heinzTutorialQuotes = [
+    "Jeśli coś pójdzie nie tak, to zawsze winny jest VirtualBox! 😅",
+    "Niezależnie od systemu, pamiętaj o jednym: backup, backup, backup.",
+    "Nie zapomnij o zaktualizowaniu sterowników po instalacji.",
+    "Jeśli system nie chce się zainstalować, to... zrób reset BIOS-u. 😉",
+    "Wirtualka zawsze daje więcej zabawy niż fizyczny komputer."
+  ];
+
+  let lastIndex = -1;
+  const speech = document.querySelector(".speech");
+
+  setInterval(() => {
+    let index;
+    do {
+      index = Math.floor(Math.random() * heinzTutorialQuotes.length);
+    } while (index === lastIndex);
+    lastIndex = index;
+    speech.textContent = heinzTutorialQuotes[index];
+  }, 10000);
+</script>
+
+</body>
+</html>

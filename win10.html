@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Mat24-pl" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeinzISO - Windows 10</title>
+  <link rel="shortcut icon" href="contents/win10.png">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      color: #58a6ff;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #58a6ff;
+    }
+
+    .screenshot {
+      max-height: 400px;
+      object-fit: contain;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0ff;
+    }
+
+    .description {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    ul.description, ol.description {
+      margin-top: 15px;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    ul.description li, ol.description li {
+      margin-bottom: 10px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      background: #238636;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #2ea043;
+    }
+
+    #matrix {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.07;
+    }
+
+    #heinz {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999;
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    #heinz img {
+      width: 80px;
+      height: auto;
+      animation: float 2s ease-in-out infinite;
+    }
+
+    .speech {
+      background: #222;
+      padding: 10px 15px;
+      border-radius: 15px;
+      color: #0ff;
+      font-size: 0.9rem;
+      border: 1px solid #0ff;
+      animation: flickerText 2s infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes flickerText {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Matrix -->
+<div id="matrix"></div>
+
+<!-- Główna zawartość -->
+<div class="container">
+  <img src="contents/win10.png" alt="Logo Windows 10" class="logo" />
+  <h1>Windows 10</h1>
+  <img src="contents/Win10Screen.jfif" alt="Zrzut ekranu Windows 10" class="screenshot" />
+  
+  <div class="description">
+    <strong>Wersja:</strong> Windows 10 22H2 (ostatnia stabilna)<br>
+    <strong>Data premiery:</strong> 29 Lipca 2015 r.<br>
+    <strong>Architektura:</strong> 64-bit / 32-bit<br><br>
+
+    Windows 10 to połączenie klasyki z nowoczesnością. Wrócił do Menu Start (uff!), a jednocześnie przyniósł nowe funkcje jak Wirtualne Pulpity, Cortana (nieobecna już w Polsce 😢), DirectX 12 i wiele więcej. To system, który przez lata służył w domu, szkole i firmie.
+  </div>
+
+	<img src="contents/Win10Screen2.jpg" alt="Zrzut ekranu Windows 10" class="screenshot" />
+
+  <h2>🔧 Wymagania sprzętowe</h2>
+  <ul class="description">
+    <li>Procesor: 1 GHz lub szybszy z obsługą PAE, NX i SSE2</li>
+    <li>Pamięć RAM: 1 GB (32-bit) lub 2 GB (64-bit)</li>
+    <li>Dysk twardy: 16 GB (32-bit) lub 20 GB (64-bit)</li>
+    <li>Karta graficzna: Microsoft DirectX 9 z WDDM</li>
+    <li>Wyświetlacz: 800x600</li>
+  </ul>
+
+  <h2>💽 Instrukcja instalacji</h2>
+  <ol class="description">
+    <li>Pobierz obraz ISO klikając poniżej.</li>
+    <li>Utwórz bootowalny pendrive za pomocą narzędzi np. Rufus.</li>
+    <li>Ustaw bootowanie z USB w BIOS-ie.</li>
+    <li>Uruchom komputer ponownie i rozpocznij instalację.</li>
+    <li>Wybierz wersję systemu, dysk i rozpocznij instalację.</li>
+  </ol>
+
+  <h2>📦 Plik ISO</h2>
+  <a href="https://www.microsoft.com/pl-pl/software-download/windows10?msockid=3858982ddd5563c230f98d8cdc4762dd" class="download-btn" download>Pobierz ISO</a>
+</div>
+
+<!-- Heinz -->
+<div id="heinz">
+  <img src="contents/heinz.png" alt="Heinz">
+  <div class="speech">Windows 10? To był taki XP z TikTokiem 💀</div>
+</div>
+
+<!-- Matrix Script -->
+<script>
+  const c = document.createElement("canvas");
+  c.width = window.innerWidth;
+  c.height = window.innerHeight;
+  document.getElementById("matrix").appendChild(c);
+  const ctx = c.getContext("2d");
+
+  const letters = "01";
+  const fontSize = 16;
+  const columns = c.width / fontSize;
+  const drops = Array(Math.floor(columns)).fill(1);
+
+  function drawMatrix() {
+    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "#0ff";
+    ctx.font = fontSize + "px monospace";
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters[Math.floor(Math.random() * letters.length)];
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > c.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+
+  setInterval(drawMatrix, 50);
+</script>
+
+<!-- Losowe teksty Heinza -->
+<script>
+  const heinzTeksty = [
+    "Windows 10? To był taki XP z TikTokiem 💀",
+    "Aktualizacje co tydzień… i każda psuła drukarkę.",
+    "Ten system żył dłużej niż niektóre związki.",
+    "Hej, to w 10-ce pierwszy raz ukryli panel sterowania.",
+    "10-ka miała świetne okna... no i kafelki, kto to wymyślił?",
+    "Start wrócił – ulga dla całego narodu.",
+    "Cortana? U nas i tak nikt jej nie rozumiał.",
+    "System, który działał dobrze... po kilku aktualizacjach 😎"
+  ];
+
+  let poprzedniIndex = -1;
+  const speechBubble = document.querySelector(".speech");
+
+  setInterval(() => {
+    let nowyIndex;
+    do {
+      nowyIndex = Math.floor(Math.random() * heinzTeksty.length);
+    } while (nowyIndex === poprzedniIndex);
+    speechBubble.textContent = heinzTeksty[nowyIndex];
+    poprzedniIndex = nowyIndex;
+  }, 10000);
+</script>
+
+</body>
+</html>
