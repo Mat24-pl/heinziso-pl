@@ -8,7 +8,7 @@ HeinzISO to strona internetowa dedykowana miłośnikom systemów operacyjnych Mi
 - [Strona główna](index.html) - Lista dostępnych systemów Windows.
 - [Instrukcja instalacji](tutorial.html) - Szczegółowe instrukcje instalacji systemów na fizycznym komputerze i maszynie wirtualnej.
 - [Strefa BETA](beta.html) - Eksperymentalne wersje Windows.
-- [Windows Server](server.html) - Systemy Windows Server.
+- [Windows Server](server.html) - Serwerowe systemy Windows.
 
 ## Jak zainstalować system?
 
