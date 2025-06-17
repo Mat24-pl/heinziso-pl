@@ -128,6 +128,29 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
+
+    .eos-warning {
+  background-color: #400000;
+  color: #ff5e5e;
+  border: 1px solid #ff0000;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.05em;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -148,6 +171,12 @@
 
     Windows Millennium Edition (ME) był ostatnim systemem opartym na jądrze DOS-a, skierowanym do użytkowników domowych. Miał wprowadzić nowoczesne funkcje, ale zyskał opinię jednego z najmniej stabilnych systemów w historii. Niebieski ekran śmierci był tu gościem honorowym!
   </div>
+
+  <div class="eos-warning">
+  🛑 <strong>UWAGA!!! Ten system operacyjny od dnia 11 lipca 2006 r. nie jest już wspierany przez Microsoft.</strong><br>
+  Korzystanie z niego może wiązać się z zagrożeniem bezpieczeństwa oraz brakiem aktualizacji.
+</div>
+
 
 <img src="contents/WinMEScreen2.jpg" alt="Zrzut ekranu Windows ME" class="screenshot" />
 
