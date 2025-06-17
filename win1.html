@@ -128,6 +128,29 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
+	  
+.eos-warning {
+  background-color: #400000;
+  color: #ff5e5e;
+  border: 1px solid #ff0000;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.05em;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -169,6 +192,11 @@
 
   <h2>📦 Obraz dyskietki</h2>
   <a href="https://archive.org/download/windows1.01/Windows%201.01.ima" class="download-btn" download>Pobierz plik IMA</a>
+</div>
+
+<div class="eos-warning">
+  🛑 <strong>UWAGA!!! Od dnia 31 grudnia 2001 r. ten system operacyjny nie jest już wspierany przez Microsoft.</strong><br>
+  Korzystanie z niego może wiązać się z zagrożeniem bezpieczeństwa oraz brakiem aktualizacji.
 </div>
 
 <!-- Heinz -->
