@@ -127,6 +127,29 @@
       0%, 100% { opacity: 1; }
       50% { opacity: 0.6; }
     }
+
+    .eos-warning {
+  background-color: #400000;
+  color: #ff5e5e;
+  border: 1px solid #ff0000;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 1.05em;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
   </style>
 </head>
 <body>
@@ -148,6 +171,12 @@
     Windows 98 to legenda późnych lat 90., system idealny do grania, surfowania po necie przez modem 56k i grania w "Solitaire". Zawierał usprawniony interfejs, Active Desktop oraz Windows Update, który działał… czasem. 😅
   </div>
 
+<div class="eos-warning">
+  🛑 <strong>Ten system operacyjny od dnia 11 lipca 2006 r. nie jest już wspierany przez Microsoft.</strong><br>
+  Korzystanie z niego może wiązać się z zagrożeniem bezpieczeństwa oraz brakiem aktualizacji.
+</div>
+
+  
 <img src="contents/Win98Screen2.jpg" alt="Zrzut ekranu Windows 98" class="screenshot" />
 
   <h2>🔧 Wymagania sprzętowe</h2>
